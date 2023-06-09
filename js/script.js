@@ -48,7 +48,11 @@ This function will create and insert/append the elements needed for the paginati
 */
 function addPagination(list) {
    let numButtons = Math.ceil(list.length/9);
-   
+   let pageButtons = document.getElementsByClassName('link-list')[0];
+   pageButtons.innerHTML = '';
+   for (let i = 1; i <= numButtons.length; i++) {
+      pageButtons.insertAdjacentHTML('beforeend',`<li><button type="button">${i}</button></li>`);
+   }
 }
 
 
